@@ -5,7 +5,7 @@
 
     <groupId>com.sepanniemi.changelog</groupId>
     <artifactId>spring-boot-changelog</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
     <packaging>jar</packaging>
 
     <name>spring-boot-changelog</name>
@@ -80,6 +80,37 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>com.github.danielflower.mavenplugins</groupId>
+                <artifactId>gitlog-maven-plugin</artifactId>
+                <version>1.13.3</version>
+                <configuration>
+                    <outputDirectory>target/classes/git/logs</outputDirectory>
+                    <generateSimpleHTMLChangeLog>true</generateSimpleHTMLChangeLog>
+                    <markdownChangeLogFilename>git-changelog.md</markdownChangeLogFilename>
+                    <generateMarkdownChangeLog>true</generateMarkdownChangeLog>
+                    <simpleHTMLChangeLogFilename>git-changelog.html</simpleHTMLChangeLogFilename>
+                    <generateHTMLTableOnlyChangeLog>true</generateHTMLTableOnlyChangeLog>
+                    <htmlTableOnlyChangeLogFilename>git-changelog-tableonly.html</htmlTableOnlyChangeLogFilename>
+                    <generateJSONChangeLog>true</generateJSONChangeLog>
+                    <jsonChangeLogFilename>git-changelog.json</jsonChangeLogFilename>
+                    <issueManagementSystem>GitHub issue tracker</issueManagementSystem>
+                    <issueManagementUrl>https://github.com/sepanniemi/${artifactId}/issues</issueManagementUrl>
+                    <fullGitMessage>true</fullGitMessage>
+                    <dateFormat>yyyy-MM-dd HH:mm:ss Z</dateFormat>
+                    <includeCommitsAfter>2014-04-01 00:00:00.0 AM</includeCommitsAfter>
+                    <excludeCommiters>
+                        <commiter>jenkins</commiter>
+                    </excludeCommiters>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
