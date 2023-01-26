@@ -12,3 +12,6 @@ Uses gitlog-maven-plugin to export git history to html, json and md formatted re
 
 Path to CHANGELOG.MD file can be configured with a ```changelog.path``` application property.
 Path to git history reports can be configured with a ```git.logs.path``` application property
+
+### Example of default changelog endpoint
+![Default changelog](./img/defaultChangelog.png)
