@@ -91,7 +91,7 @@
             <plugin>
                 <groupId>com.github.danielflower.mavenplugins</groupId>
                 <artifactId>gitlog-maven-plugin</artifactId>
-                <version>1.13.3</version>
+                <version>1.14.0</version>
                 <configuration>
                     <outputDirectory>target/classes/git/logs</outputDirectory>
                     <generateSimpleHTMLChangeLog>true</generateSimpleHTMLChangeLog>
